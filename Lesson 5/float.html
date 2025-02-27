@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animated Float Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a8b, #ff6a88, #ff99ac);
+        }
+
+        .container {
+            width: 80%;
+            overflow: hidden; /* Prevents collapsing */
+        }
+
+        .box {
+            width: 150px;
+            height: 100px;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: floatIn 1.5s ease-in-out forwards;
+        }
+
+        .left {
+            float: left;
+            animation-delay: 0.5s;
+        }
+
+        .right {
+            float: right;
+            animation-delay: 1s;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box left">Left Float</div>
+        <div class="box right">Right Float</div>
+        <div class="content">
+            This text appears after the floating boxes animate in.
+        </div>
+    </div>
+
+</body>
+</html>
