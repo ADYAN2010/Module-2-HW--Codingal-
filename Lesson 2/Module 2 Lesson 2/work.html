@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Background: Gradient + Image */
+        body {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, violet),
+                url("ball.png") no-repeat top right fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        /* Animation */
+        @keyframes colorChange {
+            0% {
+                background-color: red;
+            }
+
+            50% {
+                background-color: blue;
+            }
+
+            100% {
+                background-color: green;
+            }
+        }
+
+        /* Animated Box */
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            animation: colorChange 4s infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Hi!</div>
+</body>
+
+</html>
