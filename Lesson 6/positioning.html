@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Positioning Selector with Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        select:hover {
+            background-color: #f0f0f0;
+        }
+
+        .box {
+            width: 320px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid #007bff;
+            transition: all 1s ease-in-out;
+            position: static; /* Default Position */
+            animation: fadeIn 1s ease-in-out, glow 2s infinite alternate;
+        }
+
+        .content {
+            height: 1500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px #007bff; background-color: #ffffff; }
+            50% { box-shadow: 0 0 20px #00c853; background-color: #f0f8ff; }
+            100% { box-shadow: 0 0 10px #007bff; background-color: #ffffff; }
+        }
+
+        @keyframes moveToPosition {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <label for="positionSelect"><strong>Select Positioning Type:</strong></label>
+        <select id="positionSelect">
+            <option value="static">Static</option>
+            <option value="relative">Relative</option>
+            <option value="absolute">Absolute</option>
+            <option value="fixed">Fixed</option>
+            <option value="sticky">Sticky</option>
+        </select>
+
+        <div class="box" id="positionedBox">
+            <h3 style="color: #007bff;">About Atithe Porayon</h3>
+            <p>Hello, I am the founder of Atithe Porayon, an online store specializing in historic sweets from Porabari, Tangail. We are passionate about bringing authentic flavors to your home.</p>
+        </div>
+
+        <div class="content">
+            <p style="text-align: center; font-weight: bold;">Scroll down to see the sticky effect.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("positionSelect").addEventListener("change", function() {
+            let box = document.getElementById("positionedBox");
+            let selectedValue = this.value;
+
+            // Reset styles
+            box.style.position = selectedValue;
+            box.style.top = "";
+            box.style.left = "";
+            box.style.right = "";
+            box.style.bottom = "";
+            box.style.animation = "moveToPosition 1s ease-in-out";
+
+            // Apply additional positioning properties where needed
+            if (selectedValue === "relative") {
+                box.style.top = "20px";
+                box.style.left = "20px";
+                box.style.animation = "moveToPosition 1s ease-in-out, glow 2s infinite alternate";
+            } else if (selectedValue === "absolute") {
+                box.style.top = "50px";
+                box.style.right = "50px";
+                box.style.animation = "moveToPosition 1s ease-in-out, glow 2s infinite alternate";
+            } else if (selectedValue === "fixed") {
+                box.style.top = "20px";
+                box.style.right = "20px";
+                box.style.animation = "moveToPosition 1s ease-in-out, glow 2s infinite alternate";
+            } else if (selectedValue === "sticky") {
+                box.style.top = "20px";
+                box.style.animation = "moveToPosition 1s ease-in-out, glow 2s infinite alternate";
+            }
+        });
+    </script>
+
+</body>
+</html>
