@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS Styling Techniques</title>
+
+    <style>
+        /* Global Styles */
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 40px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for better spacing and structure */
+        .container {
+            max-width: 800px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Internal CSS */
+        h2 {
+            color: #2c7a7b;
+            margin-bottom: 15px;
+        }
+
+        /* Inline CSS Example (Applied in HTML) */
+
+        /* General Spacing */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* Element Selectors */
+        h3 {
+            color: #1e3a8a;
+        }
+
+        h4 {
+            color: #d97706;
+        }
+
+        /* Class Selector */
+        .highlight {
+            color: #e63946;
+            font-weight: bold;
+            padding: 10px;
+            background: #fee2e2;
+            border-radius: 5px;
+        }
+
+        /* ID Selector */
+        #special {
+            color: #6a0572;
+            font-size: 24px;
+            text-transform: uppercase;
+            padding: 10px;
+            background: #e5d5f3;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Group Selector */
+        h5,
+        p {
+            color: #374151;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Inline CSS Example -->
+        <h1 style="color: #b91c1c;">Understanding CSS Styling</h1>
+
+        <!-- Internal CSS Example -->
+        <h2>Applying Internal Styles</h2>
+
+        <!-- External CSS Example (Simulated in Internal) -->
+        <h3>Using External Styles</h3>
+
+        <!-- Element Selector Example -->
+        <h4>Element Selector Demonstration</h4>
+        <h4>Styled Using h4 Selector</h4>
+
+        <!-- Class and ID Selector Example -->
+        <h2 class="highlight">Class-Based Styling</h2>
+        <h2 id="special">ID-Based Styling</h2>
+        <h2 class="highlight">Another Class-Based Example</h2>
+
+        <!-- Group Selector Example -->
+        <h5>Grouped Selector Example</h5>
+        <p>This paragraph shares the same style as the h5 element.</p>
+    </div>
+
+</body>
+
+</html>
